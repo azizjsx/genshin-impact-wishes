@@ -23,23 +23,18 @@ Pace.on('start', function() {
         localStorage.setItem('active_div', 'wish');
     }
 })
-function activate() {
-    if(active_div === 'wish') {
-        wish_div.style.display = 'block';
-    }
-};
 Pace.on('done', function() {
-    setInterval(() => {
-    activate();
     main.removeAttribute('style');
     main.style.pointerEvents = 'none';
     main.classList.add('fade-in');
     loader.classList.add('fade-out');
-    setInterval(() => {
+    setTimeout(() => {
+        if(active_div === 'wish') {
+            wish_div.style.display = 'block';
+        }
         loader.remove();
         main.removeAttribute('style');
     }, 2000);
-}, 1000);
 });
 wish.addEventListener('click', function() {
     wish_div.style.display = 'block';
