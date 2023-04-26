@@ -23,10 +23,12 @@ Pace.on('start', function() {
         localStorage.setItem('active_div', 'wish');
     }
 })
-Pace.on('done', function() {
+function activate() {
     if(active_div === 'wish') {
         wish_div.style.display = 'block';
     }
+}
+Pace.on('done', function() {
     main.removeAttribute('style');
     main.style.pointerEvents = 'none';
     main.classList.add('fade-in');
