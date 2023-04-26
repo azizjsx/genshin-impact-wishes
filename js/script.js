@@ -23,18 +23,13 @@ Pace.on('start', function() {
         localStorage.setItem('active_div', 'wish');
     }
 });
-function activate() {
-    if(active_div === 'wish') {
-        wish_div.style.display = 'block';
-    }
-};
 Pace.on('done', function() {
+    wish_div.style.display = 'block';
     main.removeAttribute('style');
     main.style.pointerEvents = 'none';
     main.classList.add('fade-in');
     loader.classList.add('fade-out');
     setTimeout(() => {
-        activate();
         loader.remove();
         main.removeAttribute('style');
     }, 2000);
