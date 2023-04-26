@@ -27,8 +27,9 @@ function activate() {
     if(active_div === 'wish') {
         wish_div.style.display = 'block';
     }
-}
+};
 Pace.on('done', function() {
+    activate();
     main.removeAttribute('style');
     main.style.pointerEvents = 'none';
     main.classList.add('fade-in');
