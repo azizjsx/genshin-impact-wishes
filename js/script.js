@@ -29,6 +29,7 @@ function activate() {
     }
 };
 Pace.on('done', function() {
+    setInterval(() => {
     activate();
     main.removeAttribute('style');
     main.style.pointerEvents = 'none';
@@ -38,6 +39,7 @@ Pace.on('done', function() {
         loader.remove();
         main.removeAttribute('style');
     }, 2000);
+}, 1000);
 });
 wish.addEventListener('click', function() {
     wish_div.style.display = 'block';
